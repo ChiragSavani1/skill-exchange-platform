@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2>Edit Skill</h2>
+    {{#if error}}<div class="alert alert-danger">{{error}}</div>{{/if}}
+    <form action="/skills/edit/{{skill._id}}" method="POST">
+      <div class="mb-3">
+        <label class="form-label">Skill Name</label>
+        <input type="text" name="name" class="form-control" value="{{skill.name}}" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Category</label>
+        <select name="category" class="form-select" required>
+          <option value="{{skill.category}}" selected>{{skill.category}}</option>
+          <option value="Programming">Programming</option>
+          <option value="Design">Design</option>
+          <option value="Language">Language</option>
+          <option value="Music">Music</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Skill</button>
+      <a href="/skills" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+  </div>
+</div>

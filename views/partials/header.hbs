@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Skill Exchange</a>
+    <div class="navbar-nav">
+      {{#if user}}
+        {{#if logout}}
+          <div class="alert alert-success">You have been logged out successfully.</div>
+        {{/if}}
+        <a class="nav-link" href="/skills/add">Add Skill</a>
+        <a class="nav-link" href="/skills">My Skills</a>
+        <a class="nav-link" href="/auth/logout">Logout</a>
+      {{else}}
+        <a class="nav-link" href="/auth/login">Login</a>
+        <a class="nav-link" href="/auth/register">Register</a>
+      {{/if}}
+    </div>
+  </div>
+</nav>

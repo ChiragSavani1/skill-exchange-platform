@@ -1,0 +1,18 @@
+{{#each skills}}
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5>{{this.name}}</h5>
+      <p>Category: {{this.category}}</p>
+      <p>Created by: {{this.createdBy.name}}</p>
+      
+      {{#if ../user}}
+        {{#if (isEqual this.createdBy._id ../user._id)}}
+          <a href="/skills/edit/{{this._id}}" class="btn btn-primary btn-sm">Edit</a>
+          <form action="/skills/delete/{{this._id}}" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+{{/each}}
