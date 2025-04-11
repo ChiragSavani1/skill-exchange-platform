@@ -6,6 +6,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
+    // for my use i print this, if project fails because of db i will get to know
     console.log('MongoDB Connected...');
   } catch (err) {
     console.error('Database connection error:', err.message);
